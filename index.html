@@ -24,8 +24,8 @@
 		
 		var afterFillingFun = function () { console.log("done!"); };
 		var fields = [
-			{ id: "name", value: "Fabio", beforeFilling: null, afterFilling: afterFillingFun },
-			{ id: "lastname", value: "Ansaldi", beforeFilling: null, afterFilling: afterFillingFun }
+			{ id: "name", value: "Fabio", beforeFilling: null, afterFilling: afterFillingFun.toString() },
+			{ id: "lastname", value: "Ansaldi", beforeFilling: null, afterFilling: afterFillingFun.toString() }
 		];
 		data = { fields: fields, type: "object" };
 		contentWindow.postMessage(data, iframe.src); //send the object fields to Child
