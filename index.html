@@ -16,13 +16,11 @@
 	var iframe = document.getElementById('iframe');
 
 	iframe.onload = function() {
-	    var contentWindow = (iframe.contentWindow || iframe.contentDocument);
+	    var contentDocument = (iframe.contentDocument || iframe.ownerDocument);
 	    
-	    if(iframe.contentWindow) {
-		console.log(iframe.contentWindow);
-	    }
-	    if(iframe.contentDocument) {
-		console.log(iframe.contentDocument);
+	    if(contentDocument) {
+		console.log(contentDocument.body);
+		contentDocument.body.prepend("Hello, world!");
 	    }
 	}
 	</script>
