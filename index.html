@@ -10,15 +10,21 @@
 
 	<h1>Test for Online System</h1>
 		
-	<iframe src="https://www.ansaldi.great-site.net/index.html" id="iframe" style="width: 80%; margin: auto; height: 100%;"></iframe>
+	<iframe id="iframe" src="https://www.ansaldi.great-site.net/index.html" id="iframe" style="width: 80%; margin: auto; height: 100%;"></iframe>
 
 	<script>
-		iframe.onload = function() {
-			// The iframe.onload event is essentially the same as iframe.contentWindow.onload.
-			// It triggers when the embedded window fully loads with all resources.
-			// But we can’t access iframe.contentWindow.onload for an iframe from another origin.
-			iframe.contentDocument.body.prepend("Hello, world!");
-		};
+	var iframe = document.getElementById('iframe');
+
+	iframe.onload = function() {
+	    var contentWindow = (iframe.contentWindow || iframe.contentDocument);
+	    
+	    if(iframe.contentWindow) {
+		console.log(iframe.contentWindow);
+	    }
+	    if(iframe.contentDocument) {
+		console.log(iframe.contentDocument);
+	    }
+	}
 	</script>
 	</body>
 </html>
