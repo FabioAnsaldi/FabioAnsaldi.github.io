@@ -10,7 +10,7 @@
 
 	<h1>Test for Online System</h1>
 		
-	<iframe id="iframe" src="https://www.ansaldi.great-site.net/index.html" id="iframe" style="width: 80%; margin: auto; height: 100%;"></iframe>
+	<iframe id="iframe" src="https://www.ansaldi.great-site.net" id="iframe" style="width: 80%; margin: auto; height: 100%;"></iframe>
 
 	<script>
 	var iframe = document.getElementById('iframe');
@@ -20,7 +20,7 @@
 	    
 	    if(contentWindow) {
 		console.log(contentWindow.postMessage);
-		contentWindow.postMessage("Hello Parent!", contentWindow.top.location.href); //send the message to parent
+		contentWindow.postMessage("Hello Parent!", iframe.src); //send the message to parent
 	    }
 	}
 	</script>
