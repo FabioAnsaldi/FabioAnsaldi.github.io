@@ -20,8 +20,8 @@
 	    
 	    if(contentWindow) {
 		console.log(contentWindow.postMessage);
-		    var message = { data: "Hello Child iframe!" };
-		contentWindow.postMessage(message, iframe.src); //send the message to parent
+		    var data = { message: "Hello Child iframe!", type: "string" };
+		contentWindow.postMessage(data, iframe.src); //send the message to parent
 	    }
 	}
 	</script>
