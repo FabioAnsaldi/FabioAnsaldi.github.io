@@ -16,11 +16,11 @@
 	var iframe = document.getElementById('iframe');
 
 	iframe.onload = function() {
-	    var contentDocument = (iframe.contentDocument || iframe.ownerDocument);
+	    var contentWindow = (iframe.contentDocument || iframe.contentWindow);
 	    
-	    if(contentDocument) {
-		console.log(contentDocument.body);
-		contentDocument.body.prepend("Hello, world!");
+	    if(contentWindow) {
+		console.log(contentWindow.postMessage);
+		contentWindow.postMessage("Hello Parent!", contentWindow.top.location.href); //send the message to parent
 	    }
 	}
 	</script>
