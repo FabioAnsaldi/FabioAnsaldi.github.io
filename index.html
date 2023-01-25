@@ -18,10 +18,17 @@
 	iframe.onload = function() {
 	    var contentWindow = (iframe.contentDocument || iframe.contentWindow);
 	    
-	    if(contentWindow) {
-		console.log(contentWindow.postMessage);
-		    var data = { message: "Hello Child iframe!", type: "string" };
-		contentWindow.postMessage(data, iframe.src); //send the message to parent
+	    if (contentWindow) {
+		var data = { message: "Hello Child iframe!", type: "string" };
+		contentWindow.postMessage(data, iframe.src); //send the message to Child
+		
+		var afterFillingFun = function () { console.log("done!"); };
+		var fields = [
+			{ id: "name", value: "Fabio", beforeFilling: null, afterFilling: afterFillingFun },
+			{ id: "lastname", value: "Ansaldi", beforeFilling: null, afterFilling: afterFillingFun }
+		];
+		data = { fields: fields, type: "object" };
+		contentWindow.postMessage(data, iframe.src); //send the object fields to Child
 	    }
 	}
 	</script>
