@@ -11,6 +11,8 @@
 	<h1>Test for Online System</h1>
 	<p>
 		<i>We are going to share user data: <b>Fabio</b> and <b>Ansaldi</b></i>
+		<br />
+		<i>and also a string <b>"I am a shared message to child iframe!"</b></i>
 	</p>
 		
 	<iframe id="iframe" src="https://www.ansaldi.great-site.net/" id="iframe" style="width: 80%; margin: auto; height: 30vh;"></iframe>
@@ -26,7 +28,7 @@
 		
 	        contentWindow.postMessage(data, iframe.src); //send the message to Child
 		
-	        var afterFillingFun = function () { console.log("filling done!"); };
+	        var afterFillingFun = function () { console.log("input filled!"); };
 	        var fields = [
 	    	    { id: "name", value: "Fabio", beforeFilling: null, afterFilling: afterFillingFun.toString() },
 	    	    { id: "lastname", value: "Ansaldi", beforeFilling: null, afterFilling: afterFillingFun.toString() }
