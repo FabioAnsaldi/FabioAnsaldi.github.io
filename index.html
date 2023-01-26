@@ -22,7 +22,7 @@
 	    var contentWindow = (iframe.contentDocument || iframe.contentWindow);
 	    
 	    if (contentWindow) {
-	        var data = { message: "Hello Child iframe!", type: "string" };
+	        var data = { message: "I am a shared message to child iframe!", type: "string" };
 		
 	        contentWindow.postMessage(data, iframe.src); //send the message to Child
 		
